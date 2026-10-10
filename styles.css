@@ -106,3 +106,43 @@
 .concept-subhead p{font-size:12px;color:var(--muted);margin:0}
 @media(max-width:980px){.featured-projects{grid-template-columns:1fr}.featured-info p{min-height:0}.featured-cover{height:300px}.mock-slot b{font-size:12px}}
 @media(max-width:600px){.featured-cover{height:250px}.featured-info{padding:22px}.mock-totals{margin:13px 0}.mock-totals span{font-size:8px;padding:8px}.mock-totals span b{font-size:21px}.depotrack-cover{padding:14px}.mock-grid{gap:5px}.mock-slot{height:41px;padding:5px}.mock-slot b{font-size:9px}.concept-subhead h3{width:100%;margin-left:0}.featured-projects{margin-bottom:38px}}
+
+/* MAB DESIGN mobile portfolio layout fix - 2026-10-10 */
+@media(max-width:980px){
+ .featured-projects{grid-template-columns:minmax(0,1fr);width:100%}
+ .featured-project{min-width:0;width:100%}
+}
+@media(max-width:600px){
+ .projects .section-intro{margin-bottom:25px}
+ .projects .section-intro h2{font-size:clamp(30px,8.5vw,36px);overflow-wrap:break-word}
+ .projects .section-intro>p{font-size:14px;line-height:1.65}
+ .featured-projects{display:flex;flex-direction:column;gap:18px;margin-bottom:36px}
+ .featured-project{overflow:hidden;min-width:0;max-width:100%}
+ .featured-cover.ritrovo-cover{height:215px}
+ .featured-cover.depotrack-cover{height:auto;min-height:0;overflow:visible;display:flex;flex-direction:column;padding:15px}
+ .featured-info{padding:21px 19px 24px}
+ .featured-info h3{font-size:clamp(23px,7vw,29px);overflow-wrap:anywhere}
+ .featured-info p{font-size:14px;line-height:1.65;min-height:0;margin-bottom:19px}
+ .featured-info .eyebrow{font-size:10px;letter-spacing:.1em}
+ .featured-link{min-height:44px;max-width:100%;display:inline-flex;align-items:center;overflow-wrap:anywhere}
+ .mock-top{flex-wrap:wrap;gap:7px;font-size:9px}
+ .mock-top strong{font-size:9px}
+ .mock-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .mock-totals span{min-width:0;overflow:hidden;overflow-wrap:anywhere;font-size:8px;line-height:1.35;min-height:51px}
+ .mock-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+ .mock-slot{min-width:0;overflow:hidden}
+ .mock-slot b{font-size:clamp(8px,2.1vw,10px)}
+ .concept-subhead{display:block;margin:0 0 18px;padding-top:23px}
+ .concept-subhead h3{margin:10px 0 6px;font-size:23px;overflow-wrap:anywhere}
+ .concept-subhead p{font-size:13px;line-height:1.5}
+ .project-grid,.project-card{min-width:0}
+ .project-caption{gap:12px}
+ .project-caption>div{min-width:0}
+ .project-caption p{overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+ .mock-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .mock-slot{height:43px}
+ .mock-slot b{font-size:10px}
+ .mock-top span{max-width:175px}
+}
