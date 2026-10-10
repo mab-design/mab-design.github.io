@@ -23,7 +23,28 @@
 .case{border-top:1px solid #314b54;padding:35px 0 65px;display:grid;grid-template-columns:1fr 1fr;gap:48px}.case h2{font-size:clamp(25px,3.4vw,37px);margin:10px 0 14px;line-height:1.2}.case p,.case li{color:#b7cbcb;line-height:1.75}.case ul{padding-left:21px}.case a{color:#ffbf50;text-decoration:underline;text-underline-offset:4px}.site-footer{border-top:1px solid #294a52;padding:22px 0 26px;color:#91adb4;font-size:12px}
 dialog{background:#152834;color:#eaf4f5;border:1px solid #61818a;border-radius:16px;box-shadow:0 25px 90px #000c;padding:27px;width:min(480px,calc(100% - 28px))}dialog::backdrop{background:#02080ccc;backdrop-filter:blur(4px)}.dialoghead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.dialoghead small{font-weight:800;letter-spacing:.12em;color:#efa00f}.dialoghead h3{font-size:32px;margin:0}.dialoghead button{border:1px solid #61737a;background:#213842;color:white;font-size:22px;line-height:1;width:38px;height:38px;border-radius:50%;cursor:pointer}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}.detail-grid div{border-top:1px solid #3e5861;padding:12px 0}.detail-grid dt{color:#9cb6bf;font-size:11px;margin-bottom:5px}.detail-grid dd{margin:0;font-weight:700}.dialog-note{color:#a6c2c8;font-size:12px;margin-top:14px}
 @media(max-width:1100px){.lane{grid-template-columns:repeat(5,minmax(0,1fr))}.stall .vehicle{font-size:15px}}
-@media(max-width:680px){.wrap{width:min(100% - 32px,1280px)}.top-inner{min-height:72px}.top img{width:115px}.top a.back{font-size:12px}.hero{padding-top:39px}.hero p{font-size:15px}.notice{padding:14px}.dashboard-top,.toolbar,.board{padding:17px}.kpis{grid-template-columns:repeat(2,1fr)}.kpi{padding:17px;border-bottom:1px solid var(--edge)}.kpi:nth-child(2){border-right:0}.kpi:nth-child(n+3){border-bottom:0}.kpi b{font-size:27px}.search{width:100%}.lane{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.stall{min-height:84px;padding:9px}.stall .vehicle{font-size:12px}.legend{padding:15px;gap:12px}.case{grid-template-columns:1fr;gap:12px}.footnote{margin-bottom:35px}}
+/* Compact mobile controls and swipeable depot lanes */
+@media(max-width:720px){
+ html,body{max-width:100%;overflow-x:clip}
+ .wrap{min-width:0}
+ .dashboard{width:100%;min-width:0;margin:24px 0 36px}
+ .dashboard-top{display:flex;align-items:flex-start;flex-direction:column;gap:12px}
+ .dashboard-top h2{font-size:22px;line-height:1.25}
+ .demo-badge{font-size:10px}
+ .toolbar{align-items:stretch}
+ .filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;width:100%}
+ .filter{min-width:0;min-height:44px;padding:8px 3px;font-size:11px;white-space:nowrap}
+ .search{width:100%;max-width:none;min-width:0;min-height:44px}
+ .board{min-width:0}
+ .lane-head{gap:6px}
+ .lane-head span{font-size:9px;letter-spacing:.04em}
+ .lane-head span:before{content:"← SCORRI →   ·   "}
+ .lane{display:grid;grid-template-columns:repeat(9,minmax(102px,1fr));gap:9px;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#537787 #172c37;padding:0 2px 13px;margin-bottom:13px;-webkit-overflow-scrolling:touch}
+ .stall{min-width:0;min-height:100px;scroll-snap-align:start;padding:11px}
+ .stall .vehicle{font-size:14px}
+ .legend{line-height:1.5}
+}
+@media(max-width:680px){.wrap{width:min(100% - 32px,1280px)}.top-inner{min-height:72px}.top img{width:115px}.top a.back{font-size:12px}.hero{padding-top:39px}.hero p{font-size:15px}.notice{padding:14px}.dashboard-top,.toolbar,.board{padding:17px}.kpis{grid-template-columns:repeat(2,1fr)}.kpi{padding:17px;border-bottom:1px solid var(--edge)}.kpi:nth-child(2){border-right:0}.kpi:nth-child(n+3){border-bottom:0}.kpi b{font-size:27px}.search{width:100%}.lane{grid-template-columns:repeat(9,minmax(102px,1fr));gap:9px}.stall{min-height:100px;padding:11px}.stall .vehicle{font-size:14px}.legend{padding:15px;gap:12px}.case{grid-template-columns:1fr;gap:12px}.footnote{margin-bottom:35px}}
 </style>
 </head>
 <body>
@@ -81,7 +102,7 @@ board.replaceChildren();
 for(const laneName of ["A","B"]){
 const heading=document.createElement("div");heading.className="lane-head";
 const left=document.createElement("strong");left.textContent="CORSIA "+laneName;heading.append(left);
-const right=document.createElement("span");right.textContent="09 STALLI / SCENARIO FICTIZIO";heading.append(right);board.append(heading);
+const right=document.createElement("span");right.textContent="09 STALLI · DATI FITTIZI";heading.append(right);board.append(heading);
 const lane=document.createElement("div");lane.className="lane";
 for(const item of stalls.filter(x=>x.stall[0]===laneName)){
 const btn=document.createElement("button");btn.type="button";btn.className="stall "+item.state;
