@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f2c33">
+<meta name="description" content="Demo pubblica di una vista deposito per la gestione flotte autobus. Tutti i dati sono fittizi e scollegati dal sistema reale.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://mab-design.github.io/depotrack-demo.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>DepoTrack · Demo gestionale flotte | MAB DESIGN</title>
+<style>
+:root{--bg:#0b1118;--panel:#121d29;--card:#182734;--edge:#334550;--text:#edf5f3;--muted:#9db5ba;--amber:#efa00f;--mint:#5ddaa7;--blue:#76b7f1;--red:#f09c79}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}
+.wrap{width:min(1280px,calc(100% - 64px));margin:auto}
+.top{border-bottom:1px solid #36505b;background:#0c222a}.top-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:20px}.top img{width:140px;height:auto;display:block}.top a.back{display:inline-flex;align-items:center;gap:9px;color:#cce1e0;font-weight:700;font-size:13px}.top a.back:hover{color:var(--amber)}
+.hero{padding:56px 0 32px;background:radial-gradient(circle at 85% 0%,#1c4e56aa,transparent 45%)}.eyebrow{color:var(--amber);font-size:11px;letter-spacing:.18em;font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(40px,6vw,75px);line-height:1.05;letter-spacing:-.05em;margin:16px 0}.hero p{max-width:790px;color:#b8cccd;font-size:17px;margin:0 0 24px}.notice{display:flex;align-items:flex-start;gap:14px;background:#253d3c;border:1px solid #77bca56e;padding:16px 20px;border-radius:11px;color:#daefdf}.notice b{color:#a7ffd7}.notice span{font-size:14px;line-height:1.5}
+.dashboard{margin:35px 0 60px;background:var(--panel);border:1px solid #41616c;border-radius:16px;overflow:hidden;box-shadow:0 30px 90px #0006}
+.dashboard-top{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#122634;border-bottom:1px solid var(--edge);padding:22px 26px;flex-wrap:wrap}.dashboard-top h2{margin:0 0 4px;font-size:24px;letter-spacing:-.025em}.dashboard-top small{color:#b0c4c9;font-size:12px}.demo-badge{color:var(--amber);border:1px solid #a87817;background:#382b16;border-radius:6px;padding:6px 11px;font-size:11px;font-weight:800;letter-spacing:.14em}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--edge)}.kpi{padding:23px 25px;border-right:1px solid var(--edge)}.kpi:last-child{border:0}.kpi b{display:block;font-size:33px;letter-spacing:-.05em;line-height:1.2}.kpi small{display:block;color:#b0c2c8;margin-top:5px}.kpi:nth-child(2) b{color:var(--mint)}.kpi:nth-child(3) b{color:var(--red)}.kpi:nth-child(4) b{color:var(--blue)}
+.toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:19px 25px;border-bottom:1px solid var(--edge)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #4c6773;border-radius:6px;background:transparent;color:#d9e5e6;padding:7px 11px;cursor:pointer;font-size:12px;font-weight:700}.filter[aria-pressed=true]{background:var(--amber);border-color:var(--amber);color:#15222b}.filter:hover:not([aria-pressed=true]){border-color:#ccd5d2}.search{padding:10px 13px;border-radius:7px;min-width:240px;max-width:100%;background:#0d1922;border:1px solid #47616a;color:white}.search::placeholder{color:#94a9ab}.search:focus-visible,.filter:focus-visible,.stall:focus-visible,.reset:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.board{padding:28px 25px 24px}.lane-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:3px 0 12px;color:#a6bac3;text-transform:uppercase;font-size:11px;letter-spacing:.15em;font-weight:800}.lane-head strong{color:#edf5f3}.lane{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px;margin-bottom:23px}.stall{background:#143340;border:1px solid #37647a;min-height:100px;border-radius:9px;cursor:pointer;color:#e6f6ff;text-align:left;padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s,border-color .15s,opacity .15s}.stall:hover{transform:translateY(-3px);border-color:#93d9f2}.stall .stall-id{font:700 10px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;color:#9bb9ce}.stall .vehicle{font:800 clamp(10px,1.1vw,15px)/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.04em}.stall .state{font-size:10px;color:#bed7e1}.stall.fermo{background:#3d3028;border-color:#af784e}.stall.fermo .vehicle{color:#ffd0aa}.stall.libero{background:#18262d;border:1px dashed #526871}.stall.libero .vehicle{font-weight:600;color:#80959e}.stall.dim{opacity:.18;filter:saturate(.4)}.lane-divider{height:22px;display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;color:#8b9fa9;margin:2px 0 23px}.lane-divider:before,.lane-divider:after{content:"";height:1px;flex:1;background:#425460}.legend{display:flex;gap:20px;flex-wrap:wrap;border-top:1px solid var(--edge);padding:19px 25px;color:#b4c5ca;font-size:12px}.legend span{display:flex;align-items:center;gap:7px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:#276075}.legend i.fermo{background:#ae7749}.legend i.libero{background:#23333e;border:1px dashed #748c90}.footnote{display:flex;justify-content:space-between;gap:20px;align-items:center;margin:16px 0 55px;flex-wrap:wrap}.footnote p{margin:0;color:#98b4ba;font-size:13px}.reset{border:1px solid #617e87;background:transparent;color:#edf5f3;border-radius:6px;padding:10px 18px;cursor:pointer;font-weight:700}.reset:hover{border-color:var(--amber);color:var(--amber)}
+.case{border-top:1px solid #314b54;padding:35px 0 65px;display:grid;grid-template-columns:1fr 1fr;gap:48px}.case h2{font-size:clamp(25px,3.4vw,37px);margin:10px 0 14px;line-height:1.2}.case p,.case li{color:#b7cbcb;line-height:1.75}.case ul{padding-left:21px}.case a{color:#ffbf50;text-decoration:underline;text-underline-offset:4px}.site-footer{border-top:1px solid #294a52;padding:22px 0 26px;color:#91adb4;font-size:12px}
+dialog{background:#152834;color:#eaf4f5;border:1px solid #61818a;border-radius:16px;box-shadow:0 25px 90px #000c;padding:27px;width:min(480px,calc(100% - 28px))}dialog::backdrop{background:#02080ccc;backdrop-filter:blur(4px)}.dialoghead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.dialoghead small{font-weight:800;letter-spacing:.12em;color:#efa00f}.dialoghead h3{font-size:32px;margin:0}.dialoghead button{border:1px solid #61737a;background:#213842;color:white;font-size:22px;line-height:1;width:38px;height:38px;border-radius:50%;cursor:pointer}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}.detail-grid div{border-top:1px solid #3e5861;padding:12px 0}.detail-grid dt{color:#9cb6bf;font-size:11px;margin-bottom:5px}.detail-grid dd{margin:0;font-weight:700}.dialog-note{color:#a6c2c8;font-size:12px;margin-top:14px}
+@media(max-width:1100px){.lane{grid-template-columns:repeat(5,minmax(0,1fr))}.stall .vehicle{font-size:15px}}
+@media(max-width:680px){.wrap{width:min(100% - 32px,1280px)}.top-inner{min-height:72px}.top img{width:115px}.top a.back{font-size:12px}.hero{padding-top:39px}.hero p{font-size:15px}.notice{padding:14px}.dashboard-top,.toolbar,.board{padding:17px}.kpis{grid-template-columns:repeat(2,1fr)}.kpi{padding:17px;border-bottom:1px solid var(--edge)}.kpi:nth-child(2){border-right:0}.kpi:nth-child(n+3){border-bottom:0}.kpi b{font-size:27px}.search{width:100%}.lane{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.stall{min-height:84px;padding:9px}.stall .vehicle{font-size:12px}.legend{padding:15px;gap:12px}.case{grid-template-columns:1fr;gap:12px}.footnote{margin-bottom:35px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap top-inner"><a href="./#progetti" aria-label="Torna al portfolio MAB DESIGN"><img src="logo-mab-web.svg" alt="MAB DESIGN"></a><a class="back" href="./#progetti">← Torna al portfolio</a></div></header>
+<main>
+<section class="hero"><div class="wrap"><span class="eyebrow">MAB DESIGN / SOFTWARE SU MISURA / PROGETTO REALE</span><h1>DepoTrack<span style="color:var(--amber)">.</span><br>Dal deposito al digitale.</h1><p>Un esempio di interfaccia per la consultazione della flotta e l'organizzazione del piazzale. La dimostrazione racconta il tipo di esperienza progettata, senza mostrare informazioni di un deposito reale.</p>
+<div class="notice" role="note"><strong aria-hidden="true">◈</strong><span><b>Demo pubblica con dati sintetici.</b> Codici dei mezzi, quantità, stati e posizioni sono inventati. Questa pagina è indipendente dai gestionali in produzione: non interroga Firebase, non legge dati operativi e non salva modifiche.</span></div></div></section>
+<div class="wrap">
+<section class="dashboard" aria-labelledby="dashboard-title">
+<div class="dashboard-top"><div><h2 id="dashboard-title">Vista deposito / simulazione</h2><small>Scenario dimostrativo · Corsie A e B · Dati fittizi</small></div><span class="demo-badge">● SIMULAZIONE OFFLINE</span></div>
+<div class="kpis"><div class="kpi"><b id="total">24</b><small>Mezzi nel campione</small></div><div class="kpi"><b id="assigned">13</b><small>Mezzi in stallo</small></div><div class="kpi"><b id="stopped">3</b><small>Fermi tecnici</small></div><div class="kpi"><b id="empty">5</b><small>Stalli disponibili</small></div></div>
+<div class="toolbar"><div class="filters" role="group" aria-label="Filtra gli stalli"><button class="filter" data-filter="tutti" aria-pressed="true">Tutti</button><button class="filter" data-filter="occupato" aria-pressed="false">Occupati</button><button class="filter" data-filter="fermo" aria-pressed="false">Fermi</button><button class="filter" data-filter="libero" aria-pressed="false">Liberi</button></div><input id="search" class="search" type="search" aria-label="Cerca codice mezzo dimostrativo" placeholder="Cerca BUS-201, BUS-202…" autocomplete="off"></div>
+<div class="board" id="board" aria-label="Mappa dimostrativa degli stalli"></div>
+<div class="legend"><span><i></i> Occupato</span><span><i class="fermo"></i> Fermo tecnico</span><span><i class="libero"></i> Libero</span><span>Seleziona uno stallo per i dettagli</span></div>
+</section>
+<div class="footnote"><p>Ogni dato visualizzato qui è generato localmente e non corrisponde a mezzi, personale o sedi reali.</p><button type="button" class="reset" id="reset">Ripristina visualizzazione ↺</button></div>
+<section class="case"><div><span class="eyebrow">01 / IL PROBLEMA</span><h2>Trasformare informazioni operative in decisioni leggibili.</h2><p>Nei depositi autobus, trovare rapidamente un mezzo e capirne lo stato richiede una rappresentazione chiara di assegnazioni, posizioni e condizioni operative.</p></div><div><span class="eyebrow">02 / LA SOLUZIONE</span><h2>Un sistema progettato attorno al lavoro quotidiano.</h2><p>Il progetto DepoTrack comprende un software di gestione delle flotte e interfacce dedicate alla consultazione delle informazioni. Questa pagina mostra soltanto una <strong>ricostruzione illustrativa</strong> dell'esperienza, con dati inventati e nessun accesso ai sistemi operativi.</p><p><a href="https://depotrack-solutions.github.io/index.html" target="_blank" rel="noopener noreferrer">Scopri il sito pubblico DepoTrack Solutions ↗</a></p></div></section>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">MAB DESIGN · DepoTrack case study · Demo indipendente con dati fittizi · <a href="./#progetti">Portfolio</a></div></footer>
+<dialog id="details" aria-labelledby="detail-title"><div class="dialoghead"><div><small>SCHEDA DIMOSTRATIVA</small><h3 id="detail-title">BUS-201</h3></div><button type="button" id="close-details" aria-label="Chiudi scheda">×</button></div><dl class="detail-grid"><div><dt>Stallo</dt><dd id="d-stall"></dd></div><div><dt>Stato</dt><dd id="d-state"></dd></div><div><dt>Tipologia</dt><dd id="d-type"></dd></div><div><dt>Anno simulato</dt><dd id="d-year"></dd></div></dl><p class="dialog-note">Questa scheda contiene esclusivamente informazioni inventate per il portfolio.</p></dialog>
+<script>
+"use strict";
+const parked=[
+["BUS-201","A01","occupato"],["BUS-202","A02","occupato"],["BUS-203","A03","fermo"],
+["BUS-204","A04","occupato"],["BUS-205","A05","occupato"],["BUS-206","A06","occupato"],
+["BUS-207","A07","fermo"],["BUS-208","B01","occupato"],["BUS-209","B02","occupato"],
+["BUS-210","B03","occupato"],["BUS-211","B04","occupato"],["BUS-212","B05","fermo"],
+["BUS-213","B06","occupato"]
+];
+const stalls=[...Array.from({length:9},(_,i)=>"A"+String(i+1).padStart(2,"0")),...Array.from({length:9},(_,i)=>"B"+String(i+1).padStart(2,"0"))].map(s=>{
+const x=parked.find(v=>v[1]===s);
+return {stall:s,code:x?x[0]:null,state:x?x[2]:"libero"};
+});
+document.getElementById("total").textContent="24";
+document.getElementById("assigned").textContent=parked.length;
+document.getElementById("stopped").textContent=parked.filter(x=>x[2]==="fermo").length;
+document.getElementById("empty").textContent=stalls.filter(x=>x.state==="libero").length;
+let activeFilter="tutti";let lastFocus=null;
+const board=document.getElementById("board");
+const dialog=document.getElementById("details");
+function showDetails(item){
+lastFocus=document.activeElement;
+document.getElementById("detail-title").textContent=item.code||"Stallo disponibile";
+document.getElementById("d-stall").textContent=item.stall;
+document.getElementById("d-state").textContent=item.state==="fermo"?"Fermo tecnico":item.state==="libero"?"Libero":"Occupato";
+const suffix=Number(item.stall.slice(1));
+document.getElementById("d-type").textContent=item.code?(suffix%3===0?"Bus 18 m":"Bus 12 m"):"—";
+document.getElementById("d-year").textContent=item.code?String(2018+suffix%6):"—";
+dialog.showModal();
+}
+function render(){
+const q=document.getElementById("search").value.trim().toUpperCase();
+board.replaceChildren();
+for(const laneName of ["A","B"]){
+const heading=document.createElement("div");heading.className="lane-head";
+const left=document.createElement("strong");left.textContent="CORSIA "+laneName;heading.append(left);
+const right=document.createElement("span");right.textContent="09 STALLI / SCENARIO FICTIZIO";heading.append(right);board.append(heading);
+const lane=document.createElement("div");lane.className="lane";
+for(const item of stalls.filter(x=>x.stall[0]===laneName)){
+const btn=document.createElement("button");btn.type="button";btn.className="stall "+item.state;
+const isMatch=(activeFilter==="tutti"||item.state===activeFilter)&&(!q||(item.code&&item.code.includes(q))||item.stall.includes(q));
+if(!isMatch)btn.classList.add("dim");
+const id=document.createElement("span");id.className="stall-id";id.textContent=item.stall;
+const code=document.createElement("span");code.className="vehicle";code.textContent=item.code||"—";
+const state=document.createElement("span");state.className="state";state.textContent=item.state==="fermo"?"FERMO":item.state==="libero"?"LIBERO":"IN STALLO";
+btn.setAttribute("aria-label",item.stall+": "+(item.code||"libero")+" / "+state.textContent);btn.append(id,code,state);btn.addEventListener("click",()=>showDetails(item));lane.append(btn);
+}board.append(lane);
+if(laneName==="A"){const div=document.createElement("div");div.className="lane-divider";div.textContent="PERCORSO PIAZZALE · SIMULAZIONE";board.append(div);}
+}
+}
+document.querySelectorAll("[data-filter]").forEach(btn=>btn.addEventListener("click",()=>{
+activeFilter=btn.dataset.filter;
+document.querySelectorAll("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",String(x===btn)));
+render();
+}));
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("reset").addEventListener("click",()=>{
+activeFilter="tutti";document.getElementById("search").value="";
+document.querySelectorAll("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.filter==="tutti")));
+render();
+});
+document.getElementById("close-details").addEventListener("click",()=>dialog.close());
+dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});
+dialog.addEventListener("close",()=>{if(lastFocus&&lastFocus.isConnected)lastFocus.focus();});
+render();
+</script>
+</body>
+</html>
