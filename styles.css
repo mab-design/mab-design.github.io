@@ -146,3 +146,11 @@
  .mock-slot b{font-size:10px}
  .mock-top span{max-width:175px}
 }
+/* MAB DESIGN: service specialization links */
+.software-highlight{display:flex;align-items:center;justify-content:space-between;gap:26px;margin-top:23px;padding:25px 28px;background:linear-gradient(105deg,#103b45,#082932);border:1px solid #5e838970;border-radius:7px}
+.software-highlight-copy{min-width:0;max-width:880px}
+.software-highlight h3{font-size:clamp(21px,2.2vw,29px);line-height:1.17;letter-spacing:-.035em;margin:8px 0 10px}
+.software-highlight p{font-size:14px;line-height:1.65;color:#c4d8d4;margin:0}
+.software-highlight-link{flex:none;max-width:100%;text-align:center}
+@media(max-width:1000px){.software-highlight{flex-direction:column;align-items:flex-start}.software-highlight-link{margin-top:2px}}
+@media(max-width:540px){.software-highlight{padding:22px 19px}.software-highlight h3{font-size:22px}.software-highlight-link{width:100%}}
