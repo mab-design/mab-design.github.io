@@ -37,6 +37,8 @@
     .legal{max-width:1086px;margin:0 auto;padding:16px 28px 24px;color:#9aadb1;font-size:11px;line-height:1.8;border-top:1px solid #1c2f33}
     .legal a{color:#c9d7d7}
     .mobile{display:none}
+    /* The approved illustration already contains its own footer on desktop. */
+    @media(min-width:801px){.frame>.footer{display:none}}
     /* Contact form available on desktop and mobile via real native dialog */
     dialog{max-height:min(93vh,850px);overflow:auto;background:#0b1920;color:var(--cream);width:min(540px,calc(100% - 24px));border:1px solid #36a8ad80;border-radius:14px;padding:0;box-shadow:0 26px 80px #000b}
     dialog::backdrop{background:#01070cdb;backdrop-filter:blur(7px)}
@@ -103,6 +105,8 @@
       <button class="hotspot hotspot-pill open-contact" style="left:32.5%;top:86.67%;width:17.68%;height:2.97%" aria-label="Scopri di più su MAB DESIGN">Scopri di più</button>
       <a class="hotspot hotspot-pill" style="left:80.57%;top:52.14%;width:16.3%;height:2.83%" href="#progetti" aria-label="Vedi tutti i progetti">Vedi tutti i progetti</a>
       <button class="hotspot hotspot-pill open-contact" style="left:82.04%;top:92.54%;width:14.46%;height:3.19%" aria-label="Richiedi informazioni dal piè di pagina">Richiedi info</button>
+      <a class="hotspot hotspot-pill" style="left:38.58%;top:90.16%;width:14.64%;height:3.15%" href="mailto:mab.design.ita@proton.me" aria-label="Scrivi a MAB DESIGN via email">Email MAB DESIGN</a>
+      <a class="hotspot hotspot-pill" style="left:53.22%;top:90.16%;width:13.5%;height:3.15%" href="#home" data-scroll-top="true" aria-label="Torna su dal sito nel piè di pagina">Home MAB DESIGN</a>
     </div>
     <div class="mobile">
       <header class="mnav"><a href="./" aria-label="MAB DESIGN sito principale"><img src="logo-mab-web.svg" alt="MAB DESIGN"></a><button class="cta open-contact">Richiedi info →</button></header>
