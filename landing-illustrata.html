@@ -190,6 +190,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 const HOME_RETURN_FLAG = 'mab-return-to-header';
 const scrollTopButton = document.getElementById('backToHeader');
+let topResetSequence = 0;
 const hasReturnFlag = () => {
   try {return sessionStorage.getItem(HOME_RETURN_FLAG) === 'yes'} catch {return false}
 };
@@ -200,6 +201,8 @@ const clearReturn = () => {
   try {sessionStorage.removeItem(HOME_RETURN_FLAG)} catch {}
 };
 function forceHeader() {
+  /* A focused project card can make the browser scroll it back into view. */
+  if (document.activeElement && typeof document.activeElement.blur === 'function') document.activeElement.blur();
   const root = document.documentElement, previous = root.style.scrollBehavior;
   root.style.scrollBehavior = 'auto';
   window.scrollTo(0, 0);
@@ -211,11 +214,14 @@ function updateBackToHeader() {
   if (scrollTopButton) scrollTopButton.hidden = window.scrollY < 320;
 }
 function settleAtHeader() {
+  const sequence = ++topResetSequence;
   forceHeader();
-  requestAnimationFrame(forceHeader);
+  requestAnimationFrame(() => {if (sequence === topResetSequence) forceHeader()});
   /* Browsers may restore the old scroll position after pageshow and after images load. */
   for (const delay of [50, 180, 400, 800]) {
-    setTimeout(() => {forceHeader(); updateBackToHeader()}, delay);
+    setTimeout(() => {
+      if (sequence === topResetSequence) {forceHeader(); updateBackToHeader()}
+    }, delay);
   }
 }
 function returnToHeader() {
@@ -240,6 +246,7 @@ document.querySelectorAll('a[href^="#"]:not([data-scroll-top])').forEach(link =>
     const target = document.getElementById(decodeURIComponent(fragment.slice(1)));
     if (!target) return;
     event.preventDefault();
+    ++topResetSequence; /* Cancel any earlier delayed top reset. */
     clearReturn();
     if (location.hash !== fragment) history.pushState({mabSection:fragment}, '', fragment);
     target.scrollIntoView({behavior:'smooth', block:'start'});
