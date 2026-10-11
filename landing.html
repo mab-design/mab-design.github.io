@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F2C33">
+  <meta name="robots" content="noindex,follow">
+  <title>Landing page per attività locali | MAB DESIGN</title>
+  <meta name="description" content="Una pagina chiara, responsive e progettata per trasformare l'interesse in richieste di contatto. Scopri le landing page MAB DESIGN per attività locali.">
+  <link rel="canonical" href="https://mab-design.github.io/landing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAB DESIGN">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Meno pagine. Più obiettivi. | MAB DESIGN">
+  <meta property="og:description" content="Una landing page con un messaggio chiaro e un percorso semplice verso il contatto.">
+  <meta property="og:url" content="https://mab-design.github.io/landing.html">
+  <meta property="og:image" content="https://mab-design.github.io/hero-studio.webp">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#08272e;--bg2:#0d3239;--paper:#e9f3ef;--muted:#b2c8c6;--line:#46737a;--gold:#efa00f;--gold2:#ffc14b;--white:#fff;--teal:#2e9ca0;--danger:#ffb19d;--good:#9de5c5}
+    *,*:before,*:after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:104px}
+    body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--paper);-webkit-font-smoothing:antialiased}
+    a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold2);outline-offset:4px}
+    button,input,select,textarea{font:inherit}
+    img{max-width:100%}
+    .container{max-width:1176px;margin:auto;padding:0 30px}
+    .skip{position:absolute;left:12px;top:-70px;background:var(--gold);color:var(--bg);padding:13px 16px;z-index:30}.skip:focus{top:12px}
+    .top{position:sticky;top:0;z-index:20;background:rgba(7,34,40,.94);backdrop-filter:blur(16px);border-bottom:1px solid #4f81844f}
+    .top .container{height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:inline-flex;align-items:center;flex:none}
+    .brand img{width:163px;height:auto;max-height:60px;object-fit:contain;display:block}
+    .top-note{font-size:12px;color:var(--muted);letter-spacing:.12em;font-weight:800;text-transform:uppercase;margin-left:auto}
+    .button{border:0;appearance:none;display:inline-flex;justify-content:center;align-items:center;gap:14px;min-height:52px;border-radius:6px;padding:14px 23px;background:var(--gold);color:#08252d;font-size:14px;font-weight:900;text-decoration:none;box-shadow:0 10px 35px rgba(239,160,15,.14);transition:transform .2s,background .2s}
+    .button:hover{background:var(--gold2);transform:translateY(-2px)}
+    .button-ghost{border:1px solid #67969a;background:#12404999;color:var(--paper);box-shadow:none}.button-ghost:hover{background:#1b535a;color:white}
+    .hero{position:relative;overflow:hidden;padding:89px 0 100px;background:radial-gradient(ellipse at 91% 15%,#1c6b757d,transparent 43%),radial-gradient(ellipse at 10% 85%,#144a505e,transparent 47%),var(--bg)}
+    .hero:after{content:"";position:absolute;pointer-events:none;width:590px;height:590px;border:1px solid #efa00f55;border-radius:50%;right:-342px;top:18px;box-shadow:0 0 0 90px #efa00f12,0 0 0 180px #efa00f09}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;position:relative;z-index:1}
+    .eyebrow{display:flex;gap:12px;align-items:center;color:var(--gold2);font-size:12px;letter-spacing:.16em;font-weight:900;text-transform:uppercase}
+    .eyebrow:before{content:"";width:27px;height:2px;background:var(--gold)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif}
+    h1{margin:25px 0 25px;font-size:clamp(46px,6.2vw,80px);letter-spacing:-.066em;line-height:1.045;max-width:690px}
+    h1 em{color:var(--gold);font-style:normal}
+    .hero-lead{font-size:19px;line-height:1.73;color:#cbdbd8;max-width:560px}
+    .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin:33px 0 19px}
+    .hero-hint{display:flex;align-items:center;gap:9px;color:#b4ccca;font-size:12px;line-height:1.5}
+    .hero-hint svg{width:17px;height:17px;stroke:var(--gold2);stroke-width:2;fill:none;flex:none}
+    .mock{position:relative;background:#103940;border:1px solid #67959a8f;border-radius:18px;padding:15px;box-shadow:0 22px 85px #0006;transform:rotate(1.2deg)}
+    .mock-top{display:flex;gap:7px;padding:4px 3px 15px;align-items:center}
+    .mock-top span{width:9px;height:9px;border-radius:50%;background:#e58b60}.mock-top span:nth-child(2){background:#eebf53}.mock-top span:nth-child(3){background:#5dafaa}
+    .mock-domain{color:#b6d4d3;font:600 10px monospace;margin-left:auto;margin-right:8px}
+    .mock-body{min-height:405px;background:linear-gradient(130deg,#174b55 0%,#082831 66%);border:1px solid #4a7f8755;border-radius:10px;padding:32px 28px;overflow:hidden}
+    .mock-chip{display:inline-block;padding:8px 10px;border-radius:3px;background:#efa00f1d;border:1px solid #efa00f55;color:var(--gold2);font-size:10px;font-weight:800;letter-spacing:.12em}
+    .mock-body h2{font-size:clamp(29px,3vw,41px);max-width:330px;line-height:1.1;letter-spacing:-.06em;margin:26px 0 13px}
+    .mock-body p{font-size:12px;line-height:1.7;color:#d0dedc;max-width:295px}
+    .mock-button{display:inline-flex;background:var(--gold);padding:12px 17px;border-radius:4px;color:#07232a;font-size:11px;font-weight:900;margin:7px 0 25px}
+    .mock-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .mock-proof span{border:1px solid #3f858781;background:#133b449f;border-radius:5px;padding:13px 8px;color:#e0efeb;font-size:9px;text-align:center;line-height:1.4}
+    .mock-label{position:absolute;bottom:-24px;right:-18px;padding:14px 17px;background:#e9e3d7;color:#0b2e33;border-radius:6px;font-size:11px;font-weight:900;box-shadow:0 15px 35px #0005;transform:rotate(-3deg)}
+    .section{padding:88px 0}
+    .section-alt{background:#0d3037;border-top:1px solid #35686d66;border-bottom:1px solid #35686d66}
+    .section-head{max-width:760px;margin-bottom:35px}
+    .section-head h2{font-size:clamp(32px,4.4vw,52px);letter-spacing:-.055em;line-height:1.13;margin:17px 0}
+    .section-head p{font-size:16px;line-height:1.75;color:var(--muted)}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+    .feature{padding:29px 27px;background:#123940;border:1px solid #447d8180;border-radius:9px;min-width:0}
+    .feature-number{color:var(--gold);font-size:13px;font-weight:900;letter-spacing:.14em}
+    .feature h3{font-size:21px;letter-spacing:-.03em;margin:26px 0 11px}
+    .feature p{color:#bbcfcd;font-size:14px;line-height:1.8;margin:0}
+    .process{display:grid;grid-template-columns:1.05fr .95fr;gap:75px;align-items:start}
+    .process .section-head{margin:0}
+    .steps{display:grid;gap:16px}
+    .step{display:flex;gap:18px;align-items:flex-start;padding:19px 0;border-bottom:1px solid #4d7d8066}
+    .step:first-child{padding-top:0}
+    .step b{color:var(--gold);font:800 15px Inter;min-width:29px}
+    .step h3{font-size:19px;margin:0 0 6px}
+    .step p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+    .action-band{padding:28px 0;background:var(--gold);color:#08242b}
+    .action-band .container{display:flex;justify-content:space-between;align-items:center;gap:22px}
+    .action-band strong{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,30px);letter-spacing:-.04em}
+    .action-band .button{background:#0a2b33;color:#fff;box-shadow:none}.action-band .button:hover{background:#144954}
+    .contact-section{padding:88px 0 92px;background:radial-gradient(ellipse at 0% 65%,#19535b66,transparent 47%),var(--bg)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:62px;align-items:start}
+    .contact-intro h2{font-size:clamp(34px,4.4vw,54px);letter-spacing:-.055em;line-height:1.1;margin:21px 0}
+    .contact-intro p{color:#c2d5d2;line-height:1.8;font-size:15px}
+    .contact-points{margin:25px 0 0;padding:0;list-style:none}
+    .contact-points li{display:flex;gap:10px;line-height:1.6;font-size:14px;padding:10px 0;color:#e2eae8}
+    .contact-points li:before{content:"✓";font-weight:900;color:var(--gold)}
+    .form-card{padding:32px;background:#123b43;border:1px solid #63909378;border-radius:12px;box-shadow:0 18px 50px #0002}
+    .form-card h3{font-size:26px;letter-spacing:-.04em;margin:0 0 10px}
+    .form-card .form-intro{color:#adcac8;font-size:13px;line-height:1.65;margin:0 0 24px}
+    .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .field{margin-bottom:17px}
+    .field label{display:block;font-size:12px;font-weight:800;color:#eaf2ee;margin:0 0 8px}
+    .field input,.field select,.field textarea{width:100%;border:1px solid #6e9897a1;border-radius:5px;background:#092b32;color:#f2f9f7;padding:13px 14px;min-height:49px;font-size:14px;outline:0}
+    .field input::placeholder,.field textarea::placeholder{color:#8bacae}
+    .field select{color:#f2f9f7}
+    .field textarea{min-height:127px;resize:vertical;line-height:1.6}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 2px #efa00f4d}
+    .privacy{font-size:12px;color:#b6cdca;line-height:1.7;margin:4px 0 19px}
+    .privacy a{color:#ffd586;text-underline-offset:3px}
+    .form-card .button{width:100%;cursor:pointer}
+    .form-card button:disabled{opacity:.58;cursor:not-allowed;transform:none}
+    .form-status{font-size:13px;line-height:1.6;min-height:22px;margin:13px 0 0;color:#bfcfca}
+    .form-status.success{color:var(--good)}.form-status.error{color:var(--danger)}
+    .hp{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;left:-10000px!important}
+    .mini-faq{margin-top:60px;max-width:860px}
+    .mini-faq h2{font-size:27px;letter-spacing:-.04em;margin-bottom:20px}
+    details{border-bottom:1px solid #4a717a7c;padding:14px 0}details:first-of-type{border-top:1px solid #4a717a7c}
+    summary{cursor:pointer;list-style:none;font-weight:700;display:flex;justify-content:space-between;gap:20px;line-height:1.55}
+    summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--gold);font-size:22px}details[open] summary:after{content:"−"}
+    details p{color:var(--muted);line-height:1.7;font-size:14px;padding:8px 20px 0 0;max-width:740px}
+    footer{padding:27px 0;border-top:1px solid #547b7d55;background:#061e24}
+    footer .container{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    footer p{margin:0;font-size:12px;color:#b1c6c3}
+    footer a{color:#e1f2ec;font-size:12px;text-underline-offset:3px}
+    .floating{display:none}
+    @media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:60px}.hero{padding:70px 0 80px}.hero-copy{max-width:740px}.mock{max-width:580px;margin:auto;width:100%;transform:none}.process,.contact-grid{grid-template-columns:1fr;gap:40px}.section{padding:73px 0}}
+    @media(max-width:640px){.container{padding:0 20px}.top .container{height:72px}.brand img{width:132px}.top-note{display:none}.top .button{font-size:11px;min-height:43px;padding:11px 13px}.hero{padding:56px 0 77px}.hero-grid{gap:44px}h1{font-size:clamp(42px,11vw,58px);margin:19px 0 20px}.hero-lead{font-size:16px;line-height:1.65}.hero-actions{margin:25px 0 18px}.hero-actions .button{width:100%}.mock{padding:10px;max-width:450px}.mock-body{min-height:354px;padding:27px 18px}.mock-body h2{font-size:31px}.mock-label{right:0;bottom:-18px}.grid3{grid-template-columns:1fr}.feature{padding:24px}.feature h3{margin-top:13px}.section-head h2,.contact-intro h2{font-size:clamp(32px,9vw,43px)}.action-band .container{flex-direction:column;align-items:stretch}.action-band .button{width:100%}.form-card{padding:23px 19px}.form-row{grid-template-columns:1fr;gap:0}.contact-section{padding:62px 0 90px}footer .container{padding-bottom:52px}.floating{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:17;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#06242beF;border-top:1px solid #466c74}.floating .button{width:100%;min-height:47px;font-size:13px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<header class="top">
+  <div class="container">
+    <a class="brand" href="./" aria-label="MAB DESIGN, visita il sito principale"><img src="logo-mab-web.svg" alt="MAB DESIGN" width="163" height="58"></a>
+    <span class="top-note">Web design · Contatti · Risultati misurabili</span>
+    <a class="button" href="#contatto">Parliamo del tuo sito <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main id="contenuto">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">MAB LANDING / PER ATTIVITÀ LOCALI</span>
+        <h1 id="hero-title">Il tuo sito deve farti <em>contattare.</em> Non solo guardare.</h1>
+        <p class="hero-lead">Un cliente entra nel tuo sito. Capisce in pochi secondi cosa offri? Sa come chiamarti, prenotare o chiedere un preventivo? Creo pagine semplici, curate e progettate intorno a quell’azione.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contatto">Raccontami la tua attività <span aria-hidden="true">↗</span></a>
+          <a class="button button-ghost" href="#come-funziona">Come funziona</a>
+        </div>
+        <p class="hero-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Nessun sito complicato se non serve. Nessun risultato promesso senza dati.</p>
+      </div>
+      <div class="mock" aria-label="Anteprima illustrativa di una landing page, non un sito cliente" role="img">
+        <div class="mock-top"><span></span><span></span><span></span><span class="mock-domain">ANTEPRIMA DIMOSTRATIVA</span></div>
+        <div class="mock-body">
+          <span class="mock-chip">LA TUA ATTIVITÀ, AL CENTRO</span>
+          <h2>Fai capire subito perché scegliere te.</h2>
+          <p>Un messaggio chiaro, i servizi giusti e il modo più veloce per contattarti.</p>
+          <span class="mock-button">CHIEDI INFORMAZIONI ↗</span>
+          <div class="mock-proof"><span>01<br>Servizi chiari</span><span>02<br>Fiducia</span><span>03<br>Contatto facile</span></div>
+        </div>
+        <span class="mock-label">UN OBIETTIVO. UN PERCORSO.</span>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt" id="vantaggi">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">PERCHÉ UNA LANDING PAGE</span><h2>Meno distrazioni.<br>Più chiarezza per chi arriva.</h2><p>Non conta quante pagine hai: conta quanto è semplice per un potenziale cliente capire la tua proposta e fare il passo successivo.</p></div>
+      <div class="grid3">
+        <article class="feature"><span class="feature-number">01 / MESSAGGIO</span><h3>Subito al punto</h3><p>Chi visita capisce che cosa fai, per chi lo fai e perché dovrebbe approfondire.</p></article>
+        <article class="feature"><span class="feature-number">02 / ESPERIENZA</span><h3>Pensata per lo smartphone</h3><p>Testi leggibili, caricamento essenziale, pulsanti facili da trovare e contenuti ordinati.</p></article>
+        <article class="feature"><span class="feature-number">03 / AZIONE</span><h3>Un contatto semplice</h3><p>Una richiesta, una prenotazione o una telefonata: la pagina viene progettata per un obiettivo preciso.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="come-funziona">
+    <div class="container process">
+      <div class="section-head"><span class="eyebrow">COME LAVORIAMO</span><h2>Prima il tuo obiettivo.<br>Poi il design.</h2><p>Una landing efficace non nasce da un modello riempito di fotografie. Nasce da una domanda: cosa vuoi che faccia chi arriva sulla tua pagina?</p><a class="button button-ghost" href="#contatto">Valutiamo la tua idea ↗</a></div>
+      <div class="steps">
+        <div class="step"><b>01</b><div><h3>Capisco l'attività</h3><p>Vediamo chi sono i tuoi clienti e quali domande devono trovare risposta.</p></div></div>
+        <div class="step"><b>02</b><div><h3>Disegno il percorso</h3><p>Strutturo testi, prove di fiducia autentiche e invito al contatto.</p></div></div>
+        <div class="step"><b>03</b><div><h3>Realizzo la pagina</h3><p>Una pagina adattabile a schermi diversi e facile da consultare.</p></div></div>
+        <div class="step"><b>04</b><div><h3>Valutiamo i risultati</h3><p>Possiamo misurare le richieste ricevute e, con strumenti appropriati, capire cosa migliorare.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <div class="action-band"><div class="container"><strong>La tua attività merita una pagina con uno scopo.</strong><a class="button" href="#contatto">Parliamone ↗</a></div></div>
+  <section class="contact-section" id="contatto" aria-labelledby="contact-title">
+    <div class="container contact-grid">
+      <div class="contact-intro">
+        <span class="eyebrow">IL PRIMO PASSO</span>
+        <h2 id="contact-title">Raccontami cosa vorresti ottenere.</h2>
+        <p>Hai già un sito che non ti convince? Oppure parti da zero? Scrivimi che attività gestisci e quale risultato cerchi. Ti risponderò per capire insieme se una landing page è la scelta giusta.</p>
+        <ul class="contact-points">
+          <li>Per ristoranti, artigiani e servizi locali.</li>
+          <li>Nessuna proposta standard prima di capire il problema.</li>
+          <li>Se servono più pagine, te lo dico.</li>
+        </ul>
+      </div>
+      <div class="form-card">
+        <h3>Parliamo della tua attività.</h3>
+        <p class="form-intro">Compila questi campi: servono soltanto a capire la tua richiesta e a poterti rispondere.</p>
+        <form id="landingForm" method="post" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="fullName">Nome *</label><input id="fullName" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Come ti chiami?" required></div>
+            <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="150" placeholder="nome@attivita.it" required></div>
+          </div>
+          <div class="field"><label for="business">Che attività hai?</label><select id="business" name="business_type"><option value="">Seleziona (facoltativo)</option><option value="Ristorazione">Ristorante / pizzeria / bar</option><option value="Artigianato">Artigiano / attività tecnica</option><option value="Servizi professionali">Servizi / studio professionale</option><option value="Altro">Altro</option></select></div>
+          <div class="field"><label for="details">Che cosa vorresti ottenere? *</label><textarea id="details" name="message" minlength="15" maxlength="2000" required placeholder="Ad esempio: ho già un sito ma vorrei ricevere più richieste di preventivo."></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="honey">Lascia vuoto</label><input id="honey" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="_subject" value="MAB DESIGN — richiesta da MAB LANDING">
+          <input type="hidden" name="pagina_origine" value="MAB LANDING /landing.html">
+          <input type="hidden" id="campaignSource" name="fonte_contatto" value="diretto">
+          <p class="privacy">I dati sono utilizzati per rispondere alla richiesta. L'invio passa tramite Formspree. Consulta l'<a href="privacy.html" target="_blank" rel="noopener noreferrer">informativa privacy di MAB DESIGN</a> prima di inviare.</p>
+          <button class="button" id="submitBtn" type="submit" disabled>Invia la mia richiesta <span aria-hidden="true">↗</span></button>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite">Verifico che il modulo sia disponibile…</p>
+        </form>
+      </div>
+    </div>
+    <div class="container mini-faq">
+      <h2>Le domande più comuni.</h2>
+      <details><summary>Una pagina sola basta per ogni attività?</summary><p>No. Se vendi molti servizi differenti o hai contenuti complessi, può essere meglio un sito multipagina. La scelta dipende dagli obiettivi e dalle informazioni da comunicare.</p></details>
+      <details><summary>La landing porta clienti automaticamente?</summary><p>No. Serve traffico interessato, una proposta credibile e un modo semplice per contattarti. Il design aiuta a ridurre gli ostacoli, ma nessuna pagina garantisce vendite.</p></details>
+      <details><summary>Posso usare una landing se ho già un sito?</summary><p>Sì. Una landing può affiancare il sito esistente per un servizio, una promozione o una campagna specifica, senza sostituirlo.</p></details>
+    </div>
+  </section>
+</main>
+<footer><div class="container"><p>© <span id="year">2026</span> MAB DESIGN · Progetto indipendente</p><div><a href="./">Sito principale</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:mab.design.ita@proton.me">Email</a></div></div></footer>
+<div class="floating"><a class="button" href="#contatto">Raccontami il tuo progetto ↗</a></div>
+<script src="contact-settings.js"></script>
+<script>
+(function(){
+  "use strict";
+  document.getElementById('year').textContent=String(new Date().getFullYear());
+  var form=document.getElementById('landingForm');
+  var submit=document.getElementById('submitBtn');
+  var status=document.getElementById('formStatus');
+  var config=window.MAB_CONTACT && window.MAB_CONTACT.formspreeEndpoint || '';
+  var endpoint=/^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(config)?config:null;
+  var source=new URLSearchParams(window.location.search).get('utm_source');
+  if(source && /^[a-zA-Z0-9_-]{1,50}$/.test(source)){document.getElementById('campaignSource').value=source}
+  if(endpoint){form.action=endpoint;submit.disabled=false;status.textContent="I campi con * sono obbligatori."}
+  else{status.textContent="Modulo temporaneamente non disponibile. Scrivi a mab.design.ita@proton.me."}
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();
+    if(!endpoint){return}
+    if(!form.reportValidity()){return}
+    if(document.getElementById('honey').value.trim()){return}
+    submit.disabled=true;
+    status.className="form-status";status.textContent="Invio della richiesta in corso…";
+    try{
+      var result=await fetch(endpoint,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}});
+      if(!result.ok){throw Error("Invio non completato")}
+      form.reset();
+      status.className="form-status success";
+      status.textContent="Richiesta ricevuta dal servizio di contatto. Grazie! Ti risponderò appena possibile.";
+    }catch(err){
+      status.className="form-status error";
+      status.textContent="Invio non riuscito. Riprova più tardi o scrivi a mab.design.ita@proton.me.";
+    }finally{submit.disabled=false}
+  });
+})();
+</script>
+</body>
+</html>
