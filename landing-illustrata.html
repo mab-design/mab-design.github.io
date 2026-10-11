@@ -21,7 +21,10 @@
     .poster{width:100%;position:relative;aspect-ratio:1086/1318;overflow:hidden}
     .poster-art{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
     .hotspot{position:absolute;display:block;border-radius:10px;cursor:pointer;background:transparent;border:0;text-indent:-9999px;overflow:hidden}
-    .hotspot:hover{box-shadow:inset 0 0 0 2px var(--gold);background:rgba(255,186,8,.045)}
+    .hotspot:hover{box-shadow:inset 0 0 0 2px var(--gold);background:rgba(255,186,8,.035)}
+    /* Existing painted yellow or cyan pills need a glow, not a second, misaligned stroke. */
+    .hotspot-filled:hover{box-shadow:0 0 10px 1px rgba(255,186,8,.55);background:rgba(255,186,8,.055)}
+    .hotspot-outlined:hover{box-shadow:0 0 11px 1px rgba(255,186,8,.43);background:rgba(255,186,8,.095)}
     .hotspot-nav{border-radius:3px}
     .hotspot-nav:hover{box-shadow:inset 0 -2px 0 var(--gold);background:transparent}
     .hotspot-pill{border-radius:999px}
@@ -86,24 +89,24 @@
       <span class="jump" id="progetti" style="top:56.76%"></span>
       <span class="jump" id="competenze" style="top:73.11%"></span>
       <span class="jump" id="chi-sono" style="top:82.07%"></span>
-      <a class="hotspot hotspot-nav" style="left:28.08%;top:0.99%;width:5.16%;height:3.42%" href="#home" data-scroll-top="true" aria-label="Home">Home</a>
-      <a class="hotspot hotspot-nav" style="left:34.53%;top:0.99%;width:5.99%;height:3.42%" href="#servizi" aria-label="Servizi">Servizi</a>
-      <a class="hotspot hotspot-nav" style="left:40.79%;top:0.99%;width:7%;height:3.42%" href="#progetti" aria-label="Progetti">Progetti</a>
-      <a class="hotspot hotspot-nav" style="left:48.25%;top:0.99%;width:7.73%;height:3.42%" href="#chi-sono" aria-label="Chi sono">Chi sono</a>
-      <a class="hotspot hotspot-nav" style="left:63.72%;top:0.99%;width:7.09%;height:3.42%" href="#contatti" aria-label="Contatti">Contatti</a>
-      <button class="hotspot hotspot-pill open-contact" style="left:79.93%;top:0.99%;width:14.27%;height:3.34%" aria-label="Richiedi informazioni">Richiedi info</button>
-      <a class="hotspot hotspot-pill" style="left:3.68%;top:25.42%;width:18.97%;height:3.87%" href="#progetti" aria-label="Guarda i progetti">Guarda i progetti</a>
-      <button class="hotspot hotspot-pill open-contact" style="left:23.66%;top:25.42%;width:22.84%;height:3.94%" aria-label="Richiedi una consulenza">Richiedi consulenza</button>
-      <button class="hotspot hotspot-card open-contact" style="left:2.39%;top:38.09%;width:23.39%;height:19.12%" aria-label="Richiedi una landing page">Landing page</button>
-      <button class="hotspot hotspot-card open-contact" style="left:26.61%;top:38.09%;width:23.11%;height:19.12%" aria-label="Richiedi un sito web">Siti web</button>
-      <button class="hotspot hotspot-card open-contact" style="left:50.28%;top:38.09%;width:23.11%;height:19.12%" aria-label="Richiedi logo e identità visiva">Logo design</button>
-      <a class="hotspot hotspot-card" style="left:74.13%;top:38.09%;width:23.85%;height:19.12%" href="software-gestionali.html" aria-label="Scopri software su misura">Software su misura</a>
-      <button class="hotspot hotspot-card concept-trigger" data-concept="Ristorante — studio grafico non commissionato" style="left:2.39%;top:60.93%;width:23.39%;height:13.66%" aria-label="Apri concept ristorante">Ristorante</button>
-      <button class="hotspot hotspot-card concept-trigger" data-concept="Impresa edile — studio grafico non commissionato" style="left:26.61%;top:60.93%;width:22.84%;height:13.66%" aria-label="Apri concept impresa edile">Impresa edile</button>
-      <button class="hotspot hotspot-card concept-trigger" data-concept="Centro estetico — studio grafico non commissionato" style="left:50.28%;top:60.93%;width:23.3%;height:13.66%" aria-label="Apri concept centro estetico">Centro estetico</button>
-      <a class="hotspot hotspot-card" style="left:74.13%;top:60.93%;width:23.94%;height:13.66%" href="depotrack-demo.html" aria-label="Apri demo gestionale DepoTrack con dati fittizi">Gestionale personalizzato</a>
-      <button class="hotspot hotspot-pill open-contact" style="left:31.77%;top:92.56%;width:17.46%;height:3.26%" aria-label="Scopri di più su MAB DESIGN">Scopri di più</button>
-      <a class="hotspot hotspot-pill" style="left:80.57%;top:57.28%;width:16.3%;height:3.11%" href="#progetti" aria-label="Vedi tutti i progetti">Vedi tutti i progetti</a>
+      <a class="hotspot hotspot-nav" style="left:27.808%;top:1.593%;width:4.328%;height:2.428%" href="#home" data-scroll-top="true" aria-label="Home">Home</a>
+      <a class="hotspot hotspot-nav" style="left:34.162%;top:1.593%;width:4.512%;height:2.428%" href="#servizi" aria-label="Servizi">Servizi</a>
+      <a class="hotspot hotspot-nav" style="left:40.516%;top:1.593%;width:6.169%;height:2.428%" href="#progetti" aria-label="Progetti">Progetti</a>
+      <a class="hotspot hotspot-nav" style="left:47.882%;top:1.593%;width:7.09%;height:2.428%" href="#chi-sono" aria-label="Chi sono">Chi sono</a>
+      <a class="hotspot hotspot-nav" style="left:62.983%;top:1.593%;width:7.274%;height:2.428%" href="#contatti" aria-label="Contatti">Contatti</a>
+      <button class="hotspot hotspot-pill hotspot-filled open-contact" style="left:80.11%;top:1.138%;width:13.72%;height:2.959%" aria-label="Richiedi informazioni">Richiedi info</button>
+      <a class="hotspot hotspot-pill hotspot-filled" style="left:3.867%;top:25.493%;width:18.785%;height:3.49%" href="#progetti" aria-label="Guarda i progetti">Guarda i progetti</a>
+      <button class="hotspot hotspot-pill hotspot-outlined open-contact" style="left:23.757%;top:25.493%;width:22.652%;height:3.49%" aria-label="Richiedi una consulenza">Richiedi consulenza</button>
+      <button class="hotspot hotspot-card open-contact" style="left:2.394%;top:38.088%;width:23.112%;height:17.602%" aria-label="Richiedi una landing page">Landing page</button>
+      <button class="hotspot hotspot-card open-contact" style="left:25.967%;top:38.088%;width:22.284%;height:17.602%" aria-label="Richiedi un sito web">Siti web</button>
+      <button class="hotspot hotspot-card open-contact" style="left:48.987%;top:38.088%;width:22.376%;height:17.602%" aria-label="Richiedi logo e identità visiva">Logo design</button>
+      <a class="hotspot hotspot-card" style="left:72.284%;top:38.088%;width:22.928%;height:17.602%" href="software-gestionali.html" aria-label="Scopri software su misura">Software su misura</a>
+      <button class="hotspot hotspot-card concept-trigger" data-concept="Ristorante — studio grafico non commissionato" style="left:2.394%;top:60.546%;width:22.56%;height:11.988%" aria-label="Apri concept ristorante">Ristorante</button>
+      <button class="hotspot hotspot-card concept-trigger" data-concept="Impresa edile — studio grafico non commissionato" style="left:25.967%;top:60.546%;width:22.284%;height:11.988%" aria-label="Apri concept impresa edile">Impresa edile</button>
+      <button class="hotspot hotspot-card concept-trigger" data-concept="Centro estetico — studio grafico non commissionato" style="left:48.987%;top:60.546%;width:22.376%;height:11.988%" aria-label="Apri concept centro estetico">Centro estetico</button>
+      <a class="hotspot hotspot-card" style="left:72.284%;top:60.546%;width:22.928%;height:11.988%" href="depotrack-demo.html" aria-label="Apri demo gestionale DepoTrack con dati fittizi">Gestionale personalizzato</a>
+      <button class="hotspot hotspot-pill hotspot-filled open-contact" style="left:32.505%;top:95.22%;width:17.587%;height:2.959%" aria-label="Scopri di più su MAB DESIGN">Scopri di più</button>
+      <a class="hotspot hotspot-pill hotspot-outlined" style="left:80.479%;top:57.511%;width:15.285%;height:1.973%" href="#progetti" aria-label="Vedi tutti i progetti">Vedi tutti i progetti</a>
       </div>
     <div class="mobile">
       <header class="mnav"><a href="./" aria-label="MAB DESIGN sito principale"><img src="logo-mab-web.svg" alt="MAB DESIGN"></a><button class="cta open-contact">Richiedi info →</button></header>
