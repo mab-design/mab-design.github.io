@@ -71,15 +71,15 @@
 .contact-form .spam-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 
 
-/* Portfolio MAB DESIGN — lavori reali e demo con dati di fantasia */
-.featured-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:0 0 54px}
+/* Portfolio MAB DESIGN — progetto software e demo con dati di fantasia */
+.featured-projects{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:0 0 54px}
 .featured-project{border:1px solid #72949b6a;border-radius:10px;overflow:hidden;background:#092b33;transition:border-color .2s,transform .2s}
 .featured-project:hover{border-color:var(--amber);transform:translateY(-3px)}
 .featured-cover{height:295px;position:relative;overflow:hidden;background:#101f2b}
-.ritrovo-cover{background:#10232c}
-.ritrovo-cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.84) saturate(.9);transition:transform .5s}
-.featured-food:hover .ritrovo-cover img{transform:scale(1.035)}
-.featured-cover-label{position:absolute;bottom:18px;left:21px;color:#fff7e8;font-size:11px;font-weight:800;letter-spacing:.13em;padding:10px 12px;background:#0b1f29d9;border:1px solid #ffffff62;border-radius:4px}
+
+
+
+
 .featured-info{padding:25px 27px 30px}
 .featured-info h3{font-size:clamp(25px,2.3vw,35px);letter-spacing:-.035em;line-height:1.1;margin:12px 0}
 .featured-info p{font-size:14px;color:#bdcfcd;line-height:1.75;margin:0 0 22px;min-height:102px}
@@ -118,7 +118,7 @@
  .projects .section-intro>p{font-size:14px;line-height:1.65}
  .featured-projects{display:flex;flex-direction:column;gap:18px;margin-bottom:36px}
  .featured-project{overflow:hidden;min-width:0;max-width:100%}
- .featured-cover.ritrovo-cover{height:215px}
+ 
  .featured-cover.depotrack-cover{height:auto;min-height:0;overflow:visible;display:flex;flex-direction:column;padding:15px}
  .featured-info{padding:21px 19px 24px}
  .featured-info h3{font-size:clamp(23px,7vw,29px);overflow-wrap:anywhere}
