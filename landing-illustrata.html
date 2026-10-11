@@ -27,6 +27,19 @@
     .hotspot-pill{border-radius:999px}
     .hotspot-card{border-radius:12px}
     .hotspot:focus-visible{outline:4px solid var(--gold);outline-offset:-5px;box-shadow:0 0 12px var(--gold)}
+    /* Real contact details placed over placeholder text baked into illustration.
+       Original art is unchanged; links are genuine interactive HTML. */
+    .poster-contact-live{position:absolute;left:38.3%;top:90.02%;width:28.05%;height:3.72%;z-index:2;
+      display:flex;flex-direction:column;justify-content:center;gap:2px;padding:3px 11px;
+      background:linear-gradient(105deg,#020e13,#041219);border:1px solid #354e54;
+      border-radius:9px;box-shadow:0 0 0 2px #020c0e}
+    .poster-contact-live a{display:flex;align-items:center;gap:8px;color:#e9f2f2;
+      font-size:clamp(8px,1.05vw,12px);font-weight:700;text-decoration:none;
+      line-height:1.25;white-space:nowrap;min-width:0}
+    .poster-contact-live a:hover{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+    .poster-contact-live a:focus-visible{outline:2px solid var(--gold);outline-offset:1px;border-radius:2px}
+    .poster-contact-live .contact-symbol{font-size:1.25em;color:#f1f6f5;flex:none;width:15px;text-align:center}
+
     .jump{position:absolute;left:0;width:1px;height:1px}
     .poster-footnote{position:absolute;right:2.5%;top:75.7%;background:#031016dd;border-radius:3px;border:1px solid #00ddeb3f;padding:2px 6px;color:#b6edf0;font-size:clamp(7px,.8vw,10px);pointer-events:none}
     .footer{border-top:1px solid #25424a;background:linear-gradient(105deg,#0d171c,#020608);padding:17px 28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -102,11 +115,15 @@
       <button class="hotspot hotspot-card concept-trigger" data-concept="Impresa edile — studio grafico non commissionato" style="left:26.61%;top:55.46%;width:22.84%;height:12.43%" aria-label="Apri concept impresa edile">Impresa edile</button>
       <button class="hotspot hotspot-card concept-trigger" data-concept="Centro estetico — studio grafico non commissionato" style="left:50.28%;top:55.46%;width:23.3%;height:12.43%" aria-label="Apri concept centro estetico">Centro estetico</button>
       <a class="hotspot hotspot-card" style="left:74.13%;top:55.46%;width:23.94%;height:12.43%" href="depotrack-demo.html" aria-label="Apri demo gestionale DepoTrack con dati fittizi">Gestionale personalizzato</a>
-      <button class="hotspot hotspot-pill open-contact" style="left:32.5%;top:86.67%;width:17.68%;height:2.97%" aria-label="Scopri di più su MAB DESIGN">Scopri di più</button>
+      <button class="hotspot hotspot-pill open-contact" style="left:31.77%;top:84.25%;width:17.46%;height:2.97%" aria-label="Scopri di più su MAB DESIGN">Scopri di più</button>
       <a class="hotspot hotspot-pill" style="left:80.57%;top:52.14%;width:16.3%;height:2.83%" href="#progetti" aria-label="Vedi tutti i progetti">Vedi tutti i progetti</a>
-      <button class="hotspot hotspot-pill open-contact" style="left:82.04%;top:92.54%;width:14.46%;height:3.19%" aria-label="Richiedi informazioni dal piè di pagina">Richiedi info</button>
-      <a class="hotspot hotspot-pill" style="left:38.58%;top:90.16%;width:14.64%;height:3.15%" href="mailto:mab.design.ita@proton.me" aria-label="Scrivi a MAB DESIGN via email">Email MAB DESIGN</a>
-      <a class="hotspot hotspot-pill" style="left:53.22%;top:90.16%;width:13.5%;height:3.15%" href="#home" data-scroll-top="true" aria-label="Torna su dal sito nel piè di pagina">Home MAB DESIGN</a>
+      <button class="hotspot hotspot-pill open-contact" style="left:79.8%;top:90.12%;width:14.05%;height:3.28%" aria-label="Richiedi informazioni dal piè di pagina">Richiedi info</button>
+      
+      
+      <div class="poster-contact-live" aria-label="Contatti ufficiali MAB DESIGN">
+        <a href="mailto:mab.design.ita@proton.me" aria-label="Scrivi a mab.design.ita@proton.me"><span class="contact-symbol" aria-hidden="true">✉</span><span>mab.design.ita@proton.me</span></a>
+        <a href="#home" data-scroll-top="true" aria-label="Torna all'inizio di mab-design.github.io"><span class="contact-symbol" aria-hidden="true">◎</span><span>mab-design.github.io</span></a>
+      </div>
     </div>
     <div class="mobile">
       <header class="mnav"><a href="./" aria-label="MAB DESIGN sito principale"><img src="logo-mab-web.svg" alt="MAB DESIGN"></a><button class="cta open-contact">Richiedi info →</button></header>
