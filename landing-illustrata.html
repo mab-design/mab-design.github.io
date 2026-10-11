@@ -97,7 +97,6 @@
       <button class="hotspot concept-trigger" data-concept="Centro estetico — studio grafico non commissionato" style="left:49%;top:60.7%;width:22.8%;height:13.3%" aria-label="Apri concept centro estetico">Centro estetico</button>
       <a class="hotspot" style="left:72.5%;top:60.7%;width:23%;height:13.3%" href="depotrack-demo.html" aria-label="Apri demo gestionale DepoTrack con dati fittizi">Gestionale personalizzato</a>
       <button class="hotspot open-contact" style="left:31%;top:96.1%;width:18%;height:3.1%" aria-label="Scopri di più su MAB DESIGN">Scopri di più</button>
-      <span class="poster-footnote">IMMAGINI DI SETTORE: CONCEPT DIMOSTRATIVI</span>
     </div>
     <div class="mobile">
       <header class="mnav"><a href="./" aria-label="MAB DESIGN sito principale"><img src="logo-mab-web.svg" alt="MAB DESIGN"></a><button class="cta open-contact">Richiedi info →</button></header>
@@ -169,8 +168,12 @@ document.getElementById('year').textContent=new Date().getFullYear();
 if(endpoint){form.action=endpoint;submit.disabled=false;status.textContent='I campi contrassegnati con * sono obbligatori.'}
 else{status.textContent='Modulo non disponibile. Scrivi a mab.design.ita@proton.me.';status.className='status error'}
 let priorFocus=null;
-const open=()=>{priorFocus=document.activeElement;modal.showModal()};
-document.querySelectorAll('.open-contact').forEach(x=>x.addEventListener('click',open));
+const open=(service)=>{priorFocus=document.activeElement;if(service)document.getElementById('service').value=service;modal.showModal()};
+document.querySelectorAll('.open-contact').forEach(button=>button.addEventListener('click',()=>{
+  const label=(button.getAttribute('aria-label')||button.textContent||'').toLowerCase();
+  const service=/software|gestional/.test(label)?'Software gestionale':/logo|identit|brand/.test(label)?'Logo e brand identity':/sito web|siti web/.test(label)?'Sito web':/landing/.test(label)?'Landing page':null;
+  open(service);
+}));
 document.getElementById('closeModal').addEventListener('click',()=>modal.close());
 document.getElementById('closeConcept').addEventListener('click',()=>concept.close());
 const closeOnBackdrop=(dialog)=>dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
